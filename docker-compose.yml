@@ -1,0 +1,18 @@
+version: "3.3"
+
+services:
+    
+  investor:    
+    image: investor 
+    build: ./investor                
+    container_name: investor   
+    volumes:
+     - /opt/investor/logs/:/opt/investor/logs
+    ports:
+     - '9595:8080'  
+    networks:
+     - socnet
+
+networks:
+  socnet:
+    driver: bridge

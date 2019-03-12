@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"     
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:p="http://primefaces.org/ui"  
+      xmlns:passthrough="http://xmlns.jcp.org/jsf/passthrough"     
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <title>HeroBoard</title>
+    </h:head>       
+
+    <f:view transient="false">
+        <p:layout fullPage="true">
+           
+          
+
+            <p:layoutUnit position="west" size="400" header="Left" resizable="true" closable="true" collapsible="true">
+                <h:outputText value="Hero Menu" />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="east" size="400" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">
+                <h:outputText value="Zero News" />
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center">
+               Central place
+            </p:layoutUnit>
+
+        </p:layout>
+
+
+       
+    </f:view>    
+</html>
+
