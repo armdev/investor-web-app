@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package io.project.app.trello;
+package io.project.app.beans;
 
 import java.io.Serializable;
 import javax.inject.Named;
 import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
+
 
 /**
  *
@@ -18,9 +18,6 @@ import javax.inject.Inject;
 @ViewScoped
 public class EventBean implements Serializable {
 
-    @Inject
-    private SessionManager sessionManager;
-
     private String eventName;
 
     /**
@@ -29,13 +26,7 @@ public class EventBean implements Serializable {
     public EventBean() {
     }
 
-    public String addEvent() {
-        Event event = new Event();
-        event.setName(eventName);
-        event.setId(System.currentTimeMillis());
-        sessionManager.getEventList().add(event);
-        return "index";
-    }
+  
 
     public String getEventName() {
         return eventName;

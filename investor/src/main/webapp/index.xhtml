@@ -10,30 +10,61 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
 
     <h:head>
-        <title>HeroBoard</title>
+        <title>Event Board</title>
     </h:head>       
 
     <f:view transient="false">
         <p:layout fullPage="true">
-           
-          
 
             <p:layoutUnit position="west" size="400" header="Left" resizable="true" closable="true" collapsible="true">
                 <h:outputText value="Hero Menu" />
             </p:layoutUnit>
 
             <p:layoutUnit position="east" size="400" header="Right" resizable="true" closable="true" collapsible="true" effect="drop">
-                <h:outputText value="Zero News" />
+
             </p:layoutUnit>
 
             <p:layoutUnit position="center">
-               Central place
+                <h:form>
+                    <h:panelGrid columns="4" cellpadding="5">
+                        <h:outputLabel for="name" value="Submit Event:" style="font-weight:bold" />
+                        <p:inputText id="name" value="#{eventBean.eventName}" />
+                        <p:commandButton value="Submit" update="display" icon="pi pi-check" />
+                        <h:outputText id="display" value="#{eventBean.eventName}" />
+                    </h:panelGrid>
+                </h:form>
+                <br/>
+                The same in javascript:
+                <br/>
+                <form name ="subscribe" id="jsForm" action="#">
+                    Event Name: <input type="text" name="name" id="eventName" />
+
+                    <input type="button" name="submit" value="Submit Event"
+                           onclick="processFormData();" />
+
+                    <div id="demo">
+                        <h2>Event</h2>
+                    </div>
+                    <br/>
+                    <script>
+                        function processFormData() {
+                            var eventNameElement = document.getElementById('eventName');
+
+                            var data = document.getElementById("demo").innerHTML = "You are inserted " + eventNameElement.value;
+                            return data;
+
+                        }
+                    </script>
+
+
+                </form>
+
             </p:layoutUnit>
 
         </p:layout>
 
 
-       
+
     </f:view>    
 </html>
 
